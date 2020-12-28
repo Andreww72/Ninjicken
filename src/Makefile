@@ -6,8 +6,9 @@ OBJ = main.o board.o search.o eval.o
 %.o: %.cpp $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-ninjicken: $(OBJ)
+../build/ninjicken: $(OBJ)
 	$(CC) -o $@ $^ $(CFLAGS)
+	make clean
 
 .PHONY: clean
 
