@@ -1,11 +1,30 @@
-// Board class
+#include <iostream>
+#include <string>
+#include "board.h"
 
-// Properties include each square
-    // 64 squares
-    // Move stack
+// Board class implementation
 
-// Methods
-    // Generate moves
-    // Check move legal
-    // Make move
-    // Undo move
+int Board::genMoves() {
+    // For side to move
+    // Gen all possible moves
+
+    // Check if legal
+    // Return legal moves
+    return 0;
+}
+
+bool Board::checkMove() {
+    // Is move legal?
+    return true;
+    // Else return false
+}
+
+int Board::makeMove() {
+    // Add move to move stack
+    return 1;
+}
+
+int Board::undoMove() {
+    // Pop move off move stack
+    return 1;
+}
