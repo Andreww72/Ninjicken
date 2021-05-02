@@ -1,5 +1,3 @@
-#include <iostream>
-#include <string>
 #include "board.h"
 
 // Board class implementation
@@ -19,8 +17,11 @@ bool Board::checkMove() {
     // Else return false
 }
 
-int Board::makeMove() {
+int Board::makeMove(int move) {
+
+    // Check move is legal
     // Add move to move stack
+    std::cout << "making a move";
     return 1;
 }
 

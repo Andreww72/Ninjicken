@@ -1,18 +1,15 @@
-#include <iostream>
-#include <string>
 #include "main.h"
-#include "eval.h"
 
 // TODO
-    // Board representation and rules
-    // Basic alpha beta search
-    // Basic evaluation function
-    // GUI interface
-    // Opening book
-    // 5 men endgame tablebase
-    // Bitboard board representation
-    // Parallel search function
-    // Ongoing improvement of search and evaluate
+// Board representation and rules
+// Basic alpha beta search
+// Basic evaluation function
+// GUI interface
+// Opening book
+// 5 men endgame tablebase
+// Bitboard board representation
+// Parallel search function
+// Ongoing improvement of search and evaluate
 
 int main() {
     std::cout << "Welcome to Ninjicken\n";
@@ -36,6 +33,9 @@ int main() {
 
             // End of turn pass over to player
             playerTurn = true;
+
+            std::cout << "Computer played ..\n";
+            show_board(gameBoard);
             continue;
         }
 
@@ -112,12 +112,19 @@ int main() {
         // Not checks above passed, thus a move was entered
         // Check game in progress and players turn
         // Move parsing
+        int move = parse_move(inputStr);
+        gameBoard.makeMove(move);
 
         std::cout << "default";
         break;
     }
 
     return 0;
+}
+
+int parse_move(std::string move) {
+    std::cout << move;
+    return 1;
 }
 
 void show_board(Board gameBoard) {

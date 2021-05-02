@@ -1,6 +1,9 @@
 #ifndef BOARD_H
 #define BOARD_H
 
+#include <iostream>
+#include <string>
+
 const int NUM_PIECE_TYPES{6};
 enum Pieces {
     EMPTY,  // 0 
@@ -34,18 +37,15 @@ class Board {
         int white_pieces[7]{0, 8, 2, 2, 2, 1, 1};
         int black_pieces[7]{0, 8, 2, 2, 2, 1, 1};
 
-        // Castling rights
-        bool whiteCastleKing = false;
-        bool whiteCastleQueen = false;
-        bool blackCastleKing = false;
-        bool blackCastleQueen = false;
-
-        // En passant?
+        // Special rules
+        int castling; // Bitfield
+        int enPassant; // Value of viable square
+        int fifty;
 
         // Methods
         int genMoves();
         bool checkMove();
-        int makeMove();
+        int makeMove(int move);
         int undoMove();
 };
 
